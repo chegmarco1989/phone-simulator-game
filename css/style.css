@@ -1,0 +1,367 @@
+*, ::before, ::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.main-content {
+  margin-top: 50px;
+}
+.main-content .phone-container {
+  height: 550px;
+  width: 300px;
+  border: 1px solid #191919;
+  border-radius: 40px;
+  margin: 0 auto;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='3' height='3'><circle x='2' y='2' r='1' fill='#cccccc'/></svg>");
+  box-shadow: 5px 5px 0 0 #606060;
+}
+.main-content .phone-container .phone-top-container {
+  position: relative;
+}
+.main-content .phone-container .phone-top-container .phone-camera-circle, .main-content .phone-container .phone-top-container .phone-camera-circle-1, .main-content .phone-container .phone-top-container .phone-camera-circle-2, .main-content .phone-container .phone-top-container .phone-notification-light, .main-content .phone-container .phone-top-container .phone-speaker {
+  width: 6px;
+  height: 6px;
+  border: 2px solid #191919;
+  background: #4c4c4c;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+.main-content .phone-container .phone-top-container .phone-camera-circle-1 {
+  right: 117px;
+}
+.main-content .phone-container .phone-top-container .phone-camera-circle-2 {
+  right: 110px;
+}
+.main-content .phone-container .phone-top-container .phone-notification-light {
+  right: 250px;
+  border: none;
+  box-shadow: none;
+  background: none;
+}
+.main-content .phone-container .phone-top-container .phone-speaker {
+  width: 40px;
+  height: 2px;
+  border-radius: 5px;
+  right: 130px;
+}
+.main-content .phone-container .phone-screen {
+  height: 80%;
+  display: block;
+  margin: 15px;
+  margin-top: 50px;
+  background-color: #000;
+  border-radius: 2px;
+}
+.main-content .phone-container .phone-home-button {
+  width: 70px;
+  height: 20px;
+  border: 2px solid #191919;
+  border-radius: 20px;
+  margin: 0 auto;
+  background: white;
+  z-index: 100000;
+  cursor: pointer;
+  position: relative;
+}
+
+.footer {
+  font-family: 'Open Sans';
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.screen {
+  height: 438px;
+  display: block;
+  border-radius: 2px;
+  transform: scale(1);
+  transition: 1s;
+  opacity: 0;
+  position: absolute;
+  width: 268px;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+
+.none {
+  height: 100%;
+  display: block;
+  border-radius: 2px;
+  background: transparent;
+  z-index: 1000;
+  position: relative;
+}
+
+#music{
+  z-index: 0;
+}
+
+.splash {
+  background: #000;
+}
+
+#ligado {
+  background: #000;
+}
+
+.splash img {
+  position: relative;
+  width: 190px;
+  left: 15%;
+  top: 150px;
+}
+
+#ligando{
+  z-index: 0;
+}
+
+#ligado .background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("http://wallpaper21.com/wp-content/uploads/2017/08/Art-Nature-for-Samsung-Galaxy-J-Prime-Background-Stars-and-Snow-wallpaper-wpc9202529-576x1024.jpg");
+  background-size: cover;
+}
+
+#ligado .background h1, h2, p {
+  color: #fff;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+#ligado .app {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  position: relative;
+  top: 30px;
+  left: 10px;
+  cursor: pointer;
+  background-size: cover;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#ligado .chrome {
+  background-image: url("http://www.iconarchive.com/download/i61935/appicns/simplified-app/appicns-Chrome.ico");
+}
+
+#ligado .tele {
+  background-image: url("https://media.idownloadblog.com/wp-content/uploads/2016/01/2013-08-26_09-38-25__Phone_iOS7_App_Icon_Rounded.png");
+}
+
+#ligado .bloco{
+  background-image: url("http://download.seaicons.com/icons/paomedia/small-n-flat/1024/notepad-icon.png");
+}
+
+#ligado .musicas{
+  background-image: url("http://icons.iconarchive.com/icons/blackvariant/button-ui-app-pack-one/1024/Google-Music-Manager-icon.png");
+}
+
+#ligacao {
+  background: #151515;
+  transform: scale(0.5);
+}
+
+#ligando{
+  background: #151515;
+  transform: scale(0.5);
+}
+
+#ligacao2 {
+  background: #151515;
+  transform: scale(0.5);
+}
+
+#ligacao h2 {
+  color: #fff;
+  width: 70%;
+  position: relative;
+  top: 80px;
+  font-size: 22px;
+}
+
+#ligacao .atender {
+  background-image: url("http://icons-for-free.com/free-icons/png/512/1645999.png");
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 200px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#ligacao .atender:active {
+  transform: scale(1.1);
+}
+
+#ligacao .quem {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  transform: scale(1.4);
+  background-image: url("https://cdn2.iconfinder.com/data/icons/social-flat-buttons-3/512/anonymous-512.png");
+  background-size: cover;
+  border-radius: 50%;
+  top: 120px;
+}
+
+
+.index0{
+  z-index: 0;
+}
+
+#anotacao{
+  background: #eee;
+  z-index: 0;
+}
+
+#chamada{
+  background: #eee;
+}
+
+#chamada input{
+  width: 100%;
+  height: 30px;
+  border: none;
+  outline: none;
+  background: #eee;
+  text-align: center;
+  font-size: 18px;
+}
+
+#chamada .number{
+  position: relative;
+  display: inline-block;
+  top: 100px;
+  width: 55px;
+  height: 55px;
+  background: #fff;
+  margin-top: 20px;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  transition: 1s;
+  z-index: 2000;
+}
+
+#chamada .number:active{
+  transform: scale(1.1);
+}
+
+#anotacao .header{
+  background: #ff9900;
+  width: 100%;
+  position: fixed;
+  height: 40px;
+  z-index: 1000;
+}
+
+#music{
+  background: #ddd;
+}
+
+#music .header{
+  background: #ff9900;
+  width: 100%;
+  position: fixed;
+  height: 40px;
+  z-index: 1000;
+}
+
+#music .bottom{
+  position: fixed;
+  bottom: 0;
+  height: 30px;
+  background: #000;
+  width: 100%;
+}
+
+#music .bottom button{
+  border: none;
+  float: right;
+  position: relative;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+  color: #fff;
+  background: #151515;
+  cursor: pointer;
+}
+
+#chrome{
+  background: #fff;
+}
+
+#chrome .header{
+  background: #bbb;
+  width: 100%;
+  position: fixed;
+  height: 40px;
+  z-index: 1000;
+}
+
+#chrome .logo{
+  position: relative;
+  width: 200px;
+  top: 130px;
+  left: 35px;
+}
+
+#chrome input{
+  width: 90%;
+  position: relative;
+  top: 5px;
+  left: 10px;
+  border: none;
+  height: 30px;
+  outline: none;
+}
+
+#chamada .header{
+  background: #ff9900;
+  width: 100%;
+  position: fixed;
+  height: 40px;
+  z-index: 1000;
+}
+
+#anotacao .qlist{
+  position: relative;
+  top: 60px;
+  list-style: none;
+  left: 0px;
+  background: #fff;
+  padding: 10px;
+  transition: 1s;
+}
+
+#anotacao .qlist:hover{
+  background: #ddd;
+  cursor: pointer;
+}
+
+#chamada .ligars{
+  position: relative;
+  width: 200px;
+  height: 30px;
+  background: #151515;
+  top: 130px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#chamada .ligars p{
+  position: relative;
+  top: 4px;
+  font-size: 18px;
+}

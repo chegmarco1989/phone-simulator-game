@@ -1,0 +1,200 @@
+* {
+  box-sizing: inherit;
+}
+
+*::before {
+  @extend *;
+}
+
+*::after {
+  @extend *;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+html {
+  box-sizing: border-box;
+}
+
+.main-content {
+  margin-top: 50px;
+  .phone-container {
+    height: 550px;
+    width: 300px;
+    border: 1px solid #191919;
+    border-radius: 40px;
+    margin: 0 auto;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='3' height='3'><circle x='2' y='2' r='1' fill='#cccccc'/></svg>");
+    box-shadow: 5px 5px 0 0 #606060;
+    .phone-top-container {
+      position: relative;
+      .phone-camera-circle {
+        width: 6px;
+        height: 6px;
+        border: 2px solid #191919;
+        background: #4c4c4c;
+        border-radius: 50%;
+        position: absolute;
+        top: 20px;
+        right: 50px;
+      }
+      .phone-camera-circle-1 {
+        @extend .phone-camera-circle;
+        right: 117px;
+      }
+      .phone-camera-circle-2 {
+        @extend .phone-camera-circle;
+        right: 110px;
+      }
+      .phone-notification-light {
+        @extend .phone-camera-circle;
+        right: 250px;
+        border: none;
+        box-shadow: none;
+        background: none;
+      }
+      .phone-speaker {
+        @extend .phone-camera-circle;
+        width: 40px;
+        height: 2px;
+        border-radius: 5px;
+        right: 130px;
+      }
+    }
+    .phone-screen {
+      height: 80%;
+      display: block;
+      margin: 15px;
+      margin-top: 50px;
+      background-color: #000;
+      border-radius: 2px;
+    }
+    .phone-home-button {
+      width: 70px;
+      height: 20px;
+      border: 2px solid #191919;
+      border-radius: 20px;
+      margin: 0 auto;
+      background: white;
+      z-index: 100000;
+      cursor: pointer;
+      position: relative;
+    }
+  }
+}
+
+.footer {
+  font-family: 'Open Sans';
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.screen{
+    height: 438px;
+    display: block;
+    border-radius: 2px;
+    transform: scale(1);
+    transition: 1s;
+    opacity: 0;
+    position: absolute;
+    width: 268px;
+    box-shadow: 1px 2px 3px rgba(0,0,0,.40);
+}
+
+.none{
+    height: 100%;
+    display: block;
+    border-radius: 2px;
+    background: trasparent;
+    z-index: 1000;
+    position: relative;
+}
+
+.splash{
+  background: #000;
+}
+
+#ligado{
+  background: #000;
+}
+
+.splash img{
+  position: relative;
+  width: 190px;
+  left: 15%;
+  top: 150px;
+}
+
+#ligado .background{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("http://wallpaper21.com/wp-content/uploads/2017/08/Art-Nature-for-Samsung-Galaxy-J-Prime-Background-Stars-and-Snow-wallpaper-wpc9202529-576x1024.jpg");
+  background-size: cover;
+}
+
+#ligado .background h1,h2,p{
+  color: #fff;
+  text-shadow: 1px 1px rgba(0,0,0,.50);
+}
+
+#ligado .app{
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  position: relative;
+  top: 30px;
+  left: 10px;
+  cursor: pointer;
+  background-size: cover;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#ligado .chrome{
+  background-image: url("http://www.iconarchive.com/download/i61935/appicns/simplified-app/appicns-Chrome.ico");
+}
+
+#ligado .tele{
+  background-image: url("https://media.idownloadblog.com/wp-content/uploads/2016/01/2013-08-26_09-38-25__Phone_iOS7_App_Icon_Rounded.png");
+}
+
+#ligacao{
+  background: #151515;
+}
+
+#ligacao h2{
+  color: #fff;
+  width: 70%;
+  position: relative;
+  top: 80px;
+  transform: scale(0.5);
+}
+
+#ligacao .atender{
+  background-image: url("http://icons-for-free.com/free-icons/png/512/1645999.png");
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 200px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#ligacao .atender:active{
+  transform: scale(1.1);
+}
+
+#ligacao .quem{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  transform: scale(1.4);
+  background-image: url("https://cdn2.iconfinder.com/data/icons/social-flat-buttons-3/512/anonymous-512.png");
+  background-size: cover;
+  border-radius: 50%;
+  top: 120px;
+}
