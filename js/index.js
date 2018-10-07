@@ -457,13 +457,11 @@ $(".chrome").click(function() {
       $(".ligando").css( "transform" , "scale(0.5)");
       $(".ligando").css( "opacity" , "0");
       $(".ligando").css( "z-index" , "0");
-    }, 40000);
-    setTimeout( function(){
       zombie.play();
       $("#assustar").css( "transform" , "scale(1)");
       $("#assustar").css( "opacity" , "1");
       $("#assustar").css( "z-index" , "200");
-    }, 41000);
+    }, 40000);
     setTimeout( function(){
       zombie.volume = 0;
       $("#assustar").css( "transform" , "scale(0.5)");
