@@ -255,6 +255,7 @@ music1.volume = 0;
   }
   else if(number == "190"){
     if(quest.what == '4'){
+    $(".ligandotext").text("Ligação em andamento..");
     receive.volume = 1;
     receive.play();
     $("#ligando").css( "transform" , "scale(1)");
@@ -356,7 +357,6 @@ setTimeout(  function() {
 }
 
 if(quest.what == '5'){
-    $(".ligandotext").text("Ligação em andamento..");
     $("#numberligado").html("190");
     $("#ligando").css( "transform" , "scale(0.5)");
     $("#ligando").css( "opacity" , "0");
