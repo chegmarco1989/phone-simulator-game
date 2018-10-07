@@ -229,6 +229,7 @@ $( ".musicas" ).click(function() {
 
 // Ligando
 $( ".ligars" ).click(function() {
+  $(".ligandoenc").html("Chamando...");
   var number= $(".numeros").val();
   if(number == "4002"){
     bg.volume = 0;
