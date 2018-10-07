@@ -13,9 +13,13 @@ var music1 = document.createElement('audio');
 var gota = document.createElement('audio');
     gota.setAttribute('src', 'sound/quest/quest2/gota.mp3');
 var grito = document.createElement('audio');
-    grito.setAttribute('src', 'sound/quest/quest2/grito.mp3');
+    grito.setAttribute('src', 'sound/quest/quest2/socorro.mp3');
 var fora = document.createElement('audio');
     fora.setAttribute('src', 'sound/quest/fora.mp3');
+ var devo = document.createElement('audio');
+     devo.setAttribute('src', 'sound/quest/devo.mp3');
+var policial1 = document.createElement('audio');
+      policial1.setAttribute('src', 'sound/quest/policial1.wav');
 
 var bg = 'false';
 
@@ -229,10 +233,10 @@ $( ".musicas" ).click(function() {
 
 // Ligando
 $( ".ligars" ).click(function() {
+music1.volume = 0;
   $(".ligandoenc").html("Chamando...");
   var number= $(".numeros").val();
   if(number == "4002"){
-    bg.volume = 0;
     receive.volume = 1;
     receive.play();
     $("#ligando").css( "transform" , "scale(1)");
@@ -248,6 +252,50 @@ $( ".ligars" ).click(function() {
     $(".ligando").css( "z-index" , "200");
     quest.what = 3;
     }, 5000);
+  }
+  else if(number == "190"){
+    if(quest.what == '4'){
+    receive.volume = 1;
+    receive.play();
+    $("#ligando").css( "transform" , "scale(1)");
+    $("#ligando").css( "opacity" , "1");
+    $("#ligando").css( "z-index" , "200");
+    setTimeout(  function() {
+    receive.volume = 0;
+    $("#ligando").css( "transform" , "scale(0.5)");
+    $("#ligando").css( "opacity" , "0");
+    $("#ligando").css( "z-index" , "0");
+    $(".ligando").css( "transform" , "scale(1)");
+    $(".ligando").css( "opacity" , "1");
+    $(".ligando").css( "z-index" , "200");
+    quest.what = 5;
+    }, 5000);
+    }
+  else{
+    receive.play();
+    receive.volume = 1;
+    $("#ligando").css( "transform" , "scale(1)");
+    $("#ligando").css( "opacity" , "1");
+    $("#ligando").css( "z-index" , "200");
+    setTimeout(  function() {
+      devo.play();
+      receive.volume = 0;
+    }, 4000);
+    setTimeout(  function() {
+      notfound.volume = 0;
+      $(".ligandoenc").html("Chamada encerrada");
+    }, 9000);
+    setTimeout(  function() {
+      fora.volume = 1;
+      fora.play();
+    }, 10000);
+    setTimeout(  function() {
+      fora.volume = 0;
+    $("#ligando").css( "transform" , "scale(0.5)");
+    $("#ligando").css( "opacity" , "0");
+    $("#ligando").css( "z-index" , "0");
+    }, 28000);
+  }
   }
   else{
     receive.play();
@@ -280,6 +328,7 @@ $( ".ligars" ).click(function() {
 
 setInterval(function() {
 if(quest.what == '3'){
+    $("#numberligado").html("4002");
     setTimeout(  function() {
       gota.play();
     }, 500);
@@ -288,13 +337,13 @@ if(quest.what == '3'){
       grito.play();
     }, 10000);
 setTimeout(  function() {
+      fora.volume = 1;
       gota.volume = 0;
       grito.volume = 0;
-      fora.volume = 1;
       fora.play();
       $(".ligandotext").text("Chamada encerrada..");
       $(".questli").html("Estou com medo.. Devo ligar para a policia?.. Acho que não");
-}, 15000);
+}, 13000);
 
 setTimeout(  function() {
   fora.volume = 0;
@@ -302,9 +351,40 @@ setTimeout(  function() {
   $(".ligando").css( "opacity" , "0");
   $(".ligando").css( "z-index" , "0");
   quest.what = 4;
-}, 28200);
+}, 18000);
 
 }
+
+if(quest.what == '5'){
+    $(".ligandotext").text("Ligação em andamento..");
+    $("#numberligado").html("190");
+    $("#ligando").css( "transform" , "scale(0.5)");
+    $("#ligando").css( "opacity" , "0");
+    $("#ligando").css( "z-index" , "0");
+    $(".ligando").css( "transform" , "scale(1)");
+    $(".ligando").css( "opacity" , "1");
+    $(".ligando").css( "z-index" , "200");
+    setTimeout(  function() {
+      policial1.play();
+    }, 500);
+setTimeout(  function() {
+      policial1.volume = 0;
+      fora.volume = 1;
+      fora.play();
+      $(".ligandotext").text("Chamada encerrada..");
+      $(".questli").html("Devo entrar na internet..");
+}, 6500);
+
+setTimeout(  function() {
+  fora.volume = 0;
+  $(".ligando").css( "transform" , "scale(0.5)");
+  $(".ligando").css( "opacity" , "0");
+  $(".ligando").css( "z-index" , "0");
+  quest.what = 6;
+}, 19500);
+
+}
+
 }, 1000);
 
 
