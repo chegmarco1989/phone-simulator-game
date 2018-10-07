@@ -184,6 +184,10 @@ html {
   transform: scale(0.5);
 }
 
+#assustar{
+  z-index: 0;
+}
+
 #ligando{
   background: #151515;
   transform: scale(0.5);

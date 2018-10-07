@@ -22,10 +22,29 @@ var policial1 = document.createElement('audio');
       policial1.setAttribute('src', 'sound/quest/policial1.wav');
 var escrevendo = document.createElement('audio');
       escrevendo.setAttribute('src', 'sound/quest/escrevendo.mp3');
+var cry = document.createElement('audio');
+      cry.setAttribute('src', 'sound/ambient/voices/crying_loop1.wav');
+var vozes = document.createElement('audio');
+      vozes.setAttribute('src', 'sound/ambient/voices/appartments_crowd_loop1.wav');
+var gai1 = document.createElement('audio');
+      gai1.setAttribute('src', 'sound/ambient/voices/seagull_pain2.wav');
+var gai2 = document.createElement('audio');
+      gai2.setAttribute('src', 'sound/ambient/voices/seagull_pain1.wav');
+var gai3 = document.createElement('audio');
+      gai3.setAttribute('src', 'sound/ambient/voices/seagull_pain3.wav');
+var siren1 = document.createElement('audio');
+      siren1.setAttribute('src', 'sound/ambient/voices/city_siren_loop2.wav');
+var zombie = document.createElement('audio');
+      zombie.setAttribute('src', 'sound/ambient/voices/town_zombie_call1.wav');
 
 var bg = 'false';
 
 receive.loop = true;
+siren1.loop = true;
+gai1.loop = true;
+gai2.loop = true;
+gai3.loop = true;
+zombie.loop = true;
 
 var ligacao = '0';
 
@@ -399,4 +418,57 @@ else{
    music1.volume = 0;
    bg = "false";
 }
+});
+
+//Ligacao quest 6
+$(".chrome").click(function() {
+  if(quest.what == '6'){
+    music1.volume = 0;
+    $(".playmusic").text("Play");
+    $("#numberligado").html("666");
+    $("#ligando").css( "transform" , "scale(0.5)");
+    $("#ligando").css( "opacity" , "0");
+    $("#ligando").css( "z-index" , "0");
+    $(".ligando").css( "transform" , "scale(1)");
+    $(".ligando").css( "opacity" , "1");
+    $(".ligando").css( "z-index" , "200");
+    $(".questli").html("0001100001000");
+    cry.play();
+    setTimeout(  function() {
+        vozes.play();
+     }, 1000);
+    setTimeout(  function() {
+      vozes.volume = 0;
+      gai1.play();
+      gai2.play();
+      gai3.play();
+    }, 10000);
+    setTimeout( function(){
+      siren1.play();
+      gai1.volume = 0;
+      gai2.volume = 0;
+      gai3.volume = 0;
+    }, 25000);
+    setTimeout( function(){
+      gai1.volume = 0;
+      gai2.volume = 0;
+      gai3.volume = 0;
+      siren1.volume = 0;
+      $(".ligando").css( "transform" , "scale(0.5)");
+      $(".ligando").css( "opacity" , "0");
+      $(".ligando").css( "z-index" , "0");
+    }, 40000);
+    setTimeout( function(){
+      zombie.play();
+      $("#assustar").css( "transform" , "scale(1)");
+      $("#assustar").css( "opacity" , "1");
+      $("#assustar").css( "z-index" , "200");
+    }, 41000);
+    setTimeout( function(){
+      zombie.volume = 0;
+      $("#assustar").css( "transform" , "scale(0.5)");
+      $("#assustar").css( "opacity" , "0");
+      $("#assustar").css( "z-index" , "0");
+    }, 48000);
+  }
 });
