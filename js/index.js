@@ -20,6 +20,8 @@ var fora = document.createElement('audio');
      devo.setAttribute('src', 'sound/quest/devo.mp3');
 var policial1 = document.createElement('audio');
       policial1.setAttribute('src', 'sound/quest/policial1.wav');
+var escrevendo = document.createElement('audio');
+      escrevendo.setAttribute('src', 'sound/quest/escrevendo.mp3');
 
 var bg = 'false';
 
@@ -233,6 +235,7 @@ $( ".musicas" ).click(function() {
 
 // Ligando
 $( ".ligars" ).click(function() {
+$(".playmusic").text("Play");
 music1.volume = 0;
   $(".ligandoenc").html("Chamando...");
   var number= $(".numeros").val();
@@ -270,7 +273,7 @@ music1.volume = 0;
     $(".ligando").css( "opacity" , "1");
     $(".ligando").css( "z-index" , "200");
     quest.what = 5;
-    }, 5000);
+    }, 1500);
     }
   else{
     receive.play();
@@ -341,18 +344,16 @@ setTimeout(  function() {
       fora.volume = 1;
       gota.volume = 0;
       grito.volume = 0;
-      fora.play();
       $(".ligandotext").text("Chamada encerrada..");
       $(".questli").html("Estou com medo.. Devo ligar para a policia?.. Acho que não");
 }, 13000);
 
 setTimeout(  function() {
-  fora.volume = 0;
   $(".ligando").css( "transform" , "scale(0.5)");
   $(".ligando").css( "opacity" , "0");
   $(".ligando").css( "z-index" , "0");
   quest.what = 4;
-}, 18000);
+}, 14000);
 
 }
 
@@ -369,19 +370,16 @@ if(quest.what == '5'){
     }, 500);
 setTimeout(  function() {
       policial1.volume = 0;
-      fora.volume = 1;
-      fora.play();
       $(".ligandotext").text("Chamada encerrada..");
       $(".questli").html("Devo entrar na internet..");
 }, 6500);
 
 setTimeout(  function() {
-  fora.volume = 0;
   $(".ligando").css( "transform" , "scale(0.5)");
   $(".ligando").css( "opacity" , "0");
   $(".ligando").css( "z-index" , "0");
   quest.what = 6;
-}, 19500);
+}, 7000);
 
 }
 
