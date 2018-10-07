@@ -10,6 +10,12 @@ var notfound = document.createElement('audio');
     notfound.setAttribute('src', 'sound/notfound.mp3');
 var music1 = document.createElement('audio');
     music1.setAttribute('src', 'sound/music/1.mp3');
+var gota = document.createElement('audio');
+    gota.setAttribute('src', 'sound/quest/quest2/gota.mp3');
+var grito = document.createElement('audio');
+    grito.setAttribute('src', 'sound/quest/quest2/grito.mp3');
+var fora = document.createElement('audio');
+    fora.setAttribute('src', 'sound/quest/fora.mp3');
 
 var bg = 'false';
 
@@ -113,13 +119,18 @@ $( ".atender" ).click(function() {
           quest.what = '2';
         }, 1000);
         setTimeout(  function() {
+        fora.play();
+        $(".ligandotexto").text("Chamada encerrada");
+        }, 12000);
+        setTimeout(  function() {
             bemvindo.volume = 0;
+            fora.volume = 0;
             $("#ligacao2").css( "transform" , "scale(0.2)");
             $("#ligacao2").css( "opacity" , "0");
             $("#ligacao").css( "transform" , "scale(0.2)");
             $("#ligacao").css( "opacity" , "0");
             $(".questli").html("Faça uma ligação para 4002");
-        }, 12000);
+        }, 18000);
       });
 
 
@@ -215,19 +226,81 @@ $( ".musicas" ).click(function() {
   $("#music").css( "z-index" , "200");
 });
 
+
+// Ligando
 $( ".ligars" ).click(function() {
   var number= $(".numeros").val();
   if(number == "4002"){
+    bg.volume = 0;
     receive.volume = 1;
     receive.play();
     $("#ligando").css( "transform" , "scale(1)");
     $("#ligando").css( "opacity" , "1");
     $("#ligando").css( "z-index" , "200");
+    setTimeout(  function() {
+    receive.volume = 0;
+    $("#ligando").css( "transform" , "scale(0.5)");
+    $("#ligando").css( "opacity" , "0");
+    $("#ligando").css( "z-index" , "0");
+    $(".ligando").css( "transform" , "scale(1)");
+    $(".ligando").css( "opacity" , "1");
+    $(".ligando").css( "z-index" , "200");
+    quest.what = 3;
+    }, 5000);
   }
   else{
-    notfound.play();
+    receive.volume = 0;
+    $("#ligando").css( "transform" , "scale(0.5)");
+    $("#ligando").css( "opacity" , "0");
+    $("#ligando").css( "z-index" , "0");
+    setTimeout(  function() {
+      notfound.play();
+    }, 4000);
+    setTimeout(  function() {
+      notfound.volume = 0;
+      $(".ligandoenc").html("Chamada encerrada");
+    }, 4000);
+    setTimeout(  function() {
+      fora.volume = 1;
+    }, 4000);
+    setTimeout(  function() {
+      fora.volume = 0;
+    }, 17000);
   }
 });
+
+//Ligação quest
+
+setInterval(function() {
+if(quest.what == '3'){
+    setTimeout(  function() {
+      gota.play();
+    }, 500);
+    setTimeout(  function() {
+      gota.volume = 0;
+      grito.play();
+    }, 10000);
+setTimeout(  function() {
+      gota.volume = 0;
+      grito.volume = 0;
+      fora.volume = 1;
+      fora.play();
+      $(".ligandotext").text("Chamada encerrada..");
+      $(".questli").html("Estou com medo.. Devo ligar para a policia?.. Acho que não");
+}, 15000);
+
+setTimeout(  function() {
+  fora.volume = 0;
+  $(".ligando").css( "transform" , "scale(0.5)");
+  $(".ligando").css( "opacity" , "0");
+  $(".ligando").css( "z-index" , "0");
+  quest.what = 4;
+}, 28200);
+
+}
+}, 1000);
+
+
 
 $( ".playmusic" ).click(function() {
 if(bg == "false"){

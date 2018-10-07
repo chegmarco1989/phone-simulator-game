@@ -122,6 +122,14 @@ html {
 
 #ligando{
   z-index: 0;
+  transform: scale(0.5);
+  transition: 1s;
+}
+
+.ligando{
+  z-index: 0;
+  transform: scale(0.5);
+  transition: 1s;
 }
 
 #ligado .background {
@@ -164,6 +172,10 @@ html {
 
 #ligado .musicas{
   background-image: url("http://icons.iconarchive.com/icons/blackvariant/button-ui-app-pack-one/1024/Google-Music-Manager-icon.png");
+}
+
+#ligado .settings{
+  background-image: url("https://iphonefaq.org/files/styles/large/public/settings_icon.png?itok=3d26PEll");
 }
 
 #ligacao {
