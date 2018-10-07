@@ -249,23 +249,29 @@ $( ".ligars" ).click(function() {
     }, 5000);
   }
   else{
-    receive.volume = 0;
-    $("#ligando").css( "transform" , "scale(0.5)");
-    $("#ligando").css( "opacity" , "0");
-    $("#ligando").css( "z-index" , "0");
+    receive.play();
+    receive.volume = 1;
+    $("#ligando").css( "transform" , "scale(1)");
+    $("#ligando").css( "opacity" , "1");
+    $("#ligando").css( "z-index" , "200");
     setTimeout(  function() {
       notfound.play();
+      receive.volume = 0;
     }, 4000);
     setTimeout(  function() {
       notfound.volume = 0;
       $(".ligandoenc").html("Chamada encerrada");
-    }, 4000);
+    }, 9000);
     setTimeout(  function() {
       fora.volume = 1;
-    }, 4000);
+      fora.play();
+    }, 10000);
     setTimeout(  function() {
       fora.volume = 0;
-    }, 17000);
+    $("#ligando").css( "transform" , "scale(0.5)");
+    $("#ligando").css( "opacity" , "0");
+    $("#ligando").css( "z-index" , "0");
+    }, 28000);
   }
 });
 
